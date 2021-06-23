@@ -1,0 +1,32 @@
+parameters:
+  - name: id
+    in: path
+    description: Company identifier
+    required: true
+    schema:
+      type: integer
+
+get:
+  tags:
+    - Company
+  summary: Get Company By Id
+  description: Get company by database record ID
+  operationId: filter
+  responses:
+    '200':
+      description: Success
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              data:
+                type: object
+                $ref: '#/components/schemas/Company'
+    '400':
+      description: invalid request
+    '401':
+      description: not allowed
+    '500':
+      description: internal error
+

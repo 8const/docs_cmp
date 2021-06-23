@@ -1,0 +1,42 @@
+post:
+  parameters:
+    - in: header
+      name: Account-Id
+      required: true
+      schema:
+        type: string
+        description: Request account id to know if admin/subscriber.
+  tags:
+    - Company 
+  summary: Create Company
+  description: Admin or their subscriber a creates company. 
+  operationId: create_company
+  requestBody:
+    content:
+      application/vnd.api+json:
+        schema:
+          type: object
+          required:
+            - data
+          properties:
+            data:
+              type: object
+              $ref: '#/components/schemas/Company'
+  responses:
+    '200':
+      description: Success
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              data:
+                type: object
+                $ref: '#/components/schemas/Company'
+    '400':
+      description: invalid request
+    '401':
+      description: not allowed
+    '500':
+      description: internal error
+

@@ -1,0 +1,25 @@
+get:
+  tags:
+    - Company 
+  summary: Get All Companies List
+  description: Get All Companies List
+  operationId: all 
+  responses:
+    '200':
+      description: Success
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              data:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Company'
+    '400':
+      description: invalid request
+    '401':
+      description: not allowed
+    '500':
+      description: internal error
+

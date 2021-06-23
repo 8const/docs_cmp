@@ -1,0 +1,11 @@
+allOf:
+- type: object
+required:
+  - jid 
+  - jname
+properties:
+  jid:
+    type: integer 
+  jname:
+    type: string
+

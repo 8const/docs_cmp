@@ -1,0 +1,13 @@
+allOf:
+  - type: object
+    properties:
+      name:
+        type: string
+	    description: |
+        Update name.
+      logo: 
+        type: object
+	    description: |
+        Update logo.
+
+

@@ -1,0 +1,13 @@
+allOf:
+- type: object
+required:
+  - mime_type 
+  - name 
+  - key
+properties:
+  mime_type:
+    type: integer 
+  name :
+    type: string
+  key:
+    type: integer 

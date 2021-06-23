@@ -1,0 +1,50 @@
+parameters:
+  - name: id
+    in: path
+    description: Company DB identifier
+    required: true
+    schema:
+      type: integer
+
+post:
+  parameters:
+    - in: header
+      name: Account-Id
+      required: true
+      schema:
+        type: string
+        description: Requestor account id to know if admin/subscriber.
+  tags:
+    - Company 
+  summary: Update company. 
+  description: Updating company information. Being admin/subscriber is required.
+  operationId: update_company
+  requestBody:
+    content:
+      application/vnd.api+json:
+        schema:
+          type: object
+          required:
+            - data
+          properties:
+            data:
+              type: object
+              $ref: '#/components/schemas/UpdateCompany'
+  responses:
+    '200':
+      description: Success
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              data:
+                type: object
+                $ref: '#/components/schemas/Company'
+    '400':
+      description: invalid request
+    '401':
+      description: not allowed
+    '500':
+      description: internal error
+

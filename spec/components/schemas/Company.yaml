@@ -1,0 +1,15 @@
+allOf:
+  - type: object
+    required:
+      - name
+      - logo 
+    properties:
+      name:
+        type: string
+      logo: 
+        type: object
+        $ref: '#/components/schemas/Logo'
+      id:
+        type: integer
+
+
